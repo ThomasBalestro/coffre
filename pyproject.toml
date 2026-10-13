@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coffre"
+version = "1.0.0"
+description = "Gestionnaire de mots de passe en ligne de commande, chiffré en AES-256-GCM."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Thomas Balestro" }]
+license = { text = "MIT" }
+dependencies = ["cryptography>=41"]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+coffre = "coffre.cli:main"
+
+[tool.setuptools]
+packages = ["coffre"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
